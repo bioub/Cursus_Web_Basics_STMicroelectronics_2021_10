@@ -31,12 +31,77 @@
     /* p.text.paragraphe {
       border: 1px solid black;
     } */
+
+    /* div .text {
+      border: 1px solid black;
+    } */
+
+
+    /* div > nav > p {
+      border: 1px solid black;
+    } */
+
+    /* div + p {
+      border: 1px solid black;
+    } */
+
+    /* div ~ p {
+      border: 1px solid black;
+    } */
+
+    /* tous les li sauf le premier */
+    /* ul > li + li {
+      border: 1px solid black;
+    } */
+
+    /* ul > li:first-child {
+      border: 1px solid black;
+    } */
+
+    /* ul > li:nth-child(2) {
+      border: 1px solid black;
+    } */
+
+    /* ul > li:nth-child(odd) {
+      border: 1px solid black;
+    } */
+
+    /* ul > li:nth-child(4n+2) {
+      border: 1px solid black;
+    } */
+
+    /* ul > li:last-child {
+      border: 1px solid black;
+    } */
+
+    /* body > p:nth-of-type(2) {
+      border: 1px solid black;
+    } */
+
+    /* ul > li:not(:first-child) {
+      border: 1px solid black;
+    } */
   </style>
 </head>
 <body>
-  <div>
+  <div id="ma-div">
     <p class="text paragraphe">Hello</p>
+    <nav>
+      <p>Autre paragraphe</p>
+    </nav>
   </div>
+  <p>Avant dernier</p>
   <p id="fin">Fin</p>
+  <ul>
+    <li>Lorem.</li>
+    <li>Libero.</li>
+    <li>Asperiores?</li>
+    <li>Lorem.</li>
+    <li>Libero.</li>
+    <li>Asperiores?</li>
+    <li>Lorem.</li>
+    <li>Libero.</li>
+    <li>Asperiores?</li>
+  </ul>
 </body>
 </html>

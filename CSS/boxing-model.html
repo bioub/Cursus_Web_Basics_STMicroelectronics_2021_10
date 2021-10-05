@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: yellow;
+      width: 100px; /* par défaut définir la largeur du contenu */
+      height: 100px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding: 10px 10px 10px 10px; /* ordre des aiguilles d'une montre top right bottom left */
+      padding: 10px 10px 10px; /* top right/left bottom */
+      padding: 10px 10px; /* top/bottom right/left  */
+      padding: 10px; /* top/bottom/right/left  */
+      margin: 10px 0; /* 10px en haut et en bas, 0 ailleurs */
+      /* border-width shorcut de border-top-width, border-left-width, border-right-width , border-bottom-width) */
+      /* idem pour border-color et border-style */
+      /* border: 3px dashed purple; */
+      border-width: 3px 0;
+      border-style: dotted;
+      border-color: purple;
+      border-radius: 10px;
+
+    }
+    span {
+      background-color: beige;
+      width: 100px; /* sans effet sur une balise inline */
+      height: 100px; /* sans effet sur une balise inline */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .content-box {
+      box-sizing: content-box; /* valeur par défaut */
+    }
+
+    .border-box {
+      box-sizing: border-box; /* valeur par défaut */
+    }
+  </style>
+</head>
+<body>
+  <div class="content-box">
+    Contenu (div est une balise block)
+  </div>
+  <div class="border-box">
+    Contenu (div est une balise block)
+  </div>
+  <span>
+    Contenu (span est une balise inline)
+  </span>
+</body>
+</html>
