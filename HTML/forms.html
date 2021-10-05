@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Recherche Google</h2>
+  <form action="https://www.google.com/search" method="GET">
+    Recherche :
+    <input type="search" name="q">
+    <button>Google</button>
+  </form>
+
+  <h2>Contact</h2>
+  <form action="mon-url-cote-serveur-qui-traite-le-form" method="post">
+    <div>
+      Sujet :
+      <select name="sujet">
+        <option value="1">Erreur sur le site web</option>
+        <option value="2">Devis</option>
+        <option value="3">Informations sur commande</option>
+      </select>
+    </div>
+    <div>
+      Message :
+      <textarea name="message"></textarea>
+    </div>
+    <div>
+      <button>Nous contacter</button>
+    </div>
+  </form>
+</body>
+</html>
