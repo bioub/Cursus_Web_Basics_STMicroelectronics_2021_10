@@ -85,6 +85,12 @@ aside li {
   height: 30px;
   line-height: 30px;
   margin: 10px 0;
+  transition: background-color 400ms linear, transform 400ms ease;
+}
+
+aside li:hover {
+  background-color: red;
+  transform: scale(1.2);
 }
 
 aside li a {
@@ -103,12 +109,13 @@ main {
 
 .gallery {
   margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .gallery div {
-  display: inline-block;
-  width: 250px;
-  height: 250px;
+  width: 33.33%;
+  height: 100px;
 
   background-repeat: no-repeat;
   background-position: center center;
