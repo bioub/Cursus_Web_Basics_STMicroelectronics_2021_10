@@ -6,25 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    div {
-      width: 50px;
-      height: 50px;
+    :root {
+      --blue-st: blue;
     }
 
-    #div2 {
-      background-color: blue;
+    button.btn {
+      border: 1px solid black;
+      color: white;
     }
 
-    .div {
-      background-color: orange;
+    .color-primary-st {
+      background-color: var(--blue-st);
     }
-
-
   </style>
 </head>
 <body>
-  <div style="background-color: green;">div 1</div>
-  <div id="div2" class="div">div 2</div>
-  <div class="div">div 3</div>
+  <button class="btn color-primary-st">Hello</button>
 </body>
 </html>
