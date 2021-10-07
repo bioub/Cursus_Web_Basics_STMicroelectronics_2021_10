@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      display: grid;
+      grid-template-columns: 200px 30% 1fr;
+      grid-template-rows: 100px auto;
+      grid-gap: 10px;
+      gap: 10px;
+      /* grid-auto-rows: 100px; */
+    }
+
+    .wrapper > div {
+      background-color: lightblue;
+    }
+
+    .one {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+
+    .four {
+      grid-column-start: 1;
+      /* grid-column-end: span 2; */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="one">One</div>
+    <div class="two">Two</div>
+    <div class="three">Three</div>
+    <div class="four">Four</div>
+    <div class="five">Five</div>
+    <div class="six">Six</div>
+  </div>
+</body>
+</html>

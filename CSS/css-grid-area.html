@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      display: grid;
+      grid-template-areas: "one one one"
+                           "two three three"
+                           "four four five"
+                           "four four six";
+    }
+
+    .wrapper > div {
+      background-color: lightblue;
+    }
+
+    .one {
+      grid-area: one;
+    }
+
+    .two {
+      grid-area: two;
+    }
+
+    .three {
+      grid-area: three;
+    }
+
+    .four {
+      grid-area: four;
+    }
+
+    .five {
+      grid-area: five;
+    }
+
+    .six {
+      grid-area: six;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="one">Un</div>
+    <div class="two">Deux</div>
+    <div class="three">Trois</div>
+    <div class="four">Quatre</div>
+    <div class="five">Cinq</div>
+    <div class="six">Six</div>
+  </div>
+
+
+</body>
+</html>
