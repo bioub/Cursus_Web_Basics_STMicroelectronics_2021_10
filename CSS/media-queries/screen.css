@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+}
+
+.wrapper > div {
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+
+.one {
+  background-color: lightblue;
+}
+
+.two {
+  background-color: lightcoral;
+}
+
+.three {
+  background-color: lightgoldenrodyellow;
+}
+
+.four {
+  background-color: lightpink;
+}
+
+.five {
+  background-color: lightseagreen;
+}
+
+.six {
+  background-color: lightgreen;
+}
