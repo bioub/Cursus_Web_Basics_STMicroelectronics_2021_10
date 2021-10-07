@@ -30,7 +30,7 @@ Utiliser ensuite la grille pour mettre en forme la galerie d'images
 
 Ajouter les media queries avec les contraintes suivantes :
 
-- si la largeur du viewport est inférieure à `1000px` tout le layout doit basculer en 3 lignes et 1 colonnes, on affichera dans l'ordre : le header, le main puis le aside (le menu sera donc en bas)
+- si la largeur du viewport est inférieure à `1000px` tout le layout doit basculer en 3 lignes et 1 colonnes, on affichera dans l'ordre : le header, le main puis le aside (le menu sera donc en bas) (le container bascule en `width: 100%`)
 
 - si la largeur du viewport est inférieure à `600px` la galerie n'affichera que 2 images par ligne
 
