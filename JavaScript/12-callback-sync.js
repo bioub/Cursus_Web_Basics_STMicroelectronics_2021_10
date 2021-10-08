@@ -28,13 +28,14 @@ for (let i = 0; i < newPrenoms1.length; i++) {
 // const newPrenoms2 = prenoms.filter(function(prenom, i) { return prenom.length === 4; });
 
 // Données (Model)
-const newPrenoms2 = prenoms.filter((prenom, i) => prenom.length === 4)
-                           .map((prenom4Lettre, i) => prenom4Lettre.toUpperCase());
+const newPrenoms2 = prenoms
+  .filter((prenom, i) => prenom.length === 4)
+  .map((prenom4Lettre, i) => prenom4Lettre.toUpperCase());
 
 // UI (View)
 newPrenoms2.forEach((prenom4LettreUpper, i) => console.log(prenom4LettreUpper));
 
-console.log('E')
+console.log('E');
 // pile d'appels
 // ^
 // |                    up   up   up   lg   lg   lg
