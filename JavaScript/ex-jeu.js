@@ -28,7 +28,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const entierAlea = getRandomInt(100);
+const entierAlea = getRandomInt(0, 100);
 const essais = [];
 
 // la question s'affiche en synchrone (tout de suite)
