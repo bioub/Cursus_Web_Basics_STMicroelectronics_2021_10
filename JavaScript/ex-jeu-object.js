@@ -1,26 +1,28 @@
 const Random = {
-  getRandom: function () {
+  getRandom: function () { // method properties
     return Math.random();
   },
-  getRandomArbitrary: function (min, max) {
+  getRandomArbitrary: function (min, max) { // method properties
     return Math.random() * (max - min) + min;
   },
-  getRandomInt: function (min, max) {
+  getRandomInt: function (min, max) { // method properties
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
   },
-  getRandomIntInclusive: function (min, max) {
+  getRandomIntInclusive: function (min, max) { // method properties
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min +1)) + min;
-  }
+  } // trailing comma
 }
 
-// importe l'API readline de Node.js
 const readline = require('readline');
 
+// class
 function Jeu(options = {}) {
+
+  // object destructuring + shorthand property + default param
   const min = options.min || 0;
   const max = options.max !== undefined ? options.max : 100;
 
@@ -35,7 +37,7 @@ function Jeu(options = {}) {
 
 Jeu.prototype.jouer = function() {
   if (this.essais.length) {
-    console.log('Vous avez déjà joué : ' + this.essais.join(' - '))
+    console.log('Vous avez déjà joué : ' + this.essais.join(' - ') + '!'); // template literal
   }
 
   this.rl.question('Quel est le nombre entier ? ', (answer) => {
@@ -65,11 +67,3 @@ Jeu.prototype.jouer = function() {
 
 const jeu = new Jeu();
 jeu.jouer();
-
-// pile d'appels
-// ^
-// |                          question
-// |question                  jouer
-// |jouer     ..⟳..           =>       ..⟳..
-// +---------------------------------------------------------> temps
-//
