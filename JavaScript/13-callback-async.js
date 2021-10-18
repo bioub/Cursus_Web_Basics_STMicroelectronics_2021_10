@@ -15,7 +15,7 @@ console.log('E');
 // |
 // |                              lg        lg    lg         lg
 // |st - st - st - st - lg ..⟳.. cbB ..⟳.. cbA - cbD ..⟳.. cbC
-// +-----O------------------------4-------------------------------> temps
+// +-----O------------------------4---------500---501--------1000-----------> temps
 //                      E         B         A     D          C
 
 // file d'attente de timers (Oms) : cbB - () => console.log('B')

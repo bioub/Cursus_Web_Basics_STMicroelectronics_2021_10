@@ -11,10 +11,11 @@
 // }
 
 // function sum(a, b, c) {
-//   c = c ?? 0; // (valeur par défaut doit être nullish (null ou undefined))
+//   c = c ?? 0; // (valeur doit être nullish pour affecter la valeur par défaut (null ou undefined))
 //   return a + b + c;
 // }
 
+//          (1, 2, undefined)
 function sum(a, b, c = 0) {
   return a + b + c;
 }

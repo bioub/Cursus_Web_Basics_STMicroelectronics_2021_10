@@ -6,10 +6,6 @@ function externe(val) {
 }
 
 const hello = externe('Hello');
-hello();
-hello();
-hello();
-
 const bye = externe('Bye');
 bye();
 hello();

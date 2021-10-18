@@ -50,8 +50,8 @@ jouer();
 
 // pile d'appels
 // ^
-// |                            question
-// |question                    jouer
-// |jouer                       =>
+// |                          question
+// |question                  jouer
+// |jouer     ..⟳..           =>       ..⟳..
 // +---------------------------------------------------------> temps
 //
