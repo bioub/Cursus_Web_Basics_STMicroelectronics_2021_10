@@ -14,6 +14,9 @@ const nom = 'Bohdanowicz'; // à privilégier
 const names = ['Jean', 'Paul', 'Eric', 123];
 names.push('Jacques');
 
+/**
+ * @param {string} name
+ */
 function hello(name) {
   return `Hello ${name} !`; // template literal
 }

@@ -20,3 +20,17 @@ const todoInputEl = document.querySelector('.todo-input');
 /** @type {HTMLDivElement} */
 const todoListEl = document.querySelector('.todo-list');
 
+todoFormEl.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const todoRowEl = createTodoRow({
+    id: Math.random(),
+    title: todoInputEl.value,
+    completed: false,
+  });
+  todoListEl.prepend(todoRowEl); // prepend PAS IE 11
+});
+
+// Exercice 3
+// Ecouter le click de la checkbox todoToggleAllEl
+// Et cocher toutes les checkbox présentes dans
+// todoListEl en fonction de la valeur de todoToggleAllEl
