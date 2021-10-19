@@ -51,7 +51,7 @@ const contact1 = {
 };
 
 const contact2 = {
-  name: 'Eric',
+  name: 'Jean',
   hello: function() {
     return `Hello my name is ${this.name}`;
   }
@@ -116,4 +116,10 @@ for (const key in contactA) {
     const value = contactA[key];
     console.log(key, value);
   }
+}
+
+// Boucler sur les clés (ES2017+)
+for (const [key, value] of Object.entries(contactA)) {
+  console.log('key', key);
+  console.log('value', value);
 }

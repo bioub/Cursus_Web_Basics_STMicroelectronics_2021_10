@@ -34,10 +34,11 @@ const [trois, quatre, cinq, six = 6] = nbs;
 //    [3    , 4, 5        ]
 const [three, ...othersNbs] = nbs;
 console.log(three); // 3
+console.log(othersNbs); // [4, 5]
 
-// const parts = "Romain Bohdanowicz".split(' ');
-// const prenom = parts[0];
-// const nom = parts[1];
+// const tmp = "Romain Bohdanowicz".split(' ');
+// const prenom = tmp[0];
+// const nom = tmp[1];
 
 const [prenom, nom] = "Romain Bohdanowicz".split(' ');
 
@@ -51,7 +52,46 @@ console.log(maValX); // 1
 
 
 // const {x: x, y: y} = coords1;
+// const {x, y} = coords1;
 
 // Combiné avec default param et shorhand property
 // Très utile avec options
-const {x = 0, y = 0} = coords1;
+const {x = 0, y = 0, z = 0} = coords1;
+
+
+// SPREAD Object (ES2018)
+const cloneCoords = {...coords1};
+
+
+
+
+
+// let nb = 0;
+// nb = nb + 1;
+// nb += 1;
+
+// Logical Assignement Operator (ES2021)
+// let test = true
+// test = test && true
+// test &&= true;
+
+
+// class Contact {
+//   constructor() {
+//     this._name = 'Romain';
+//   }
+//   hello() {
+//     console.log(`My name is ${this._name}`);
+//   }
+// }
+
+class Contact {
+  #name = 'Romain';
+
+  hello() {
+    console.log(`My name is ${this.#name}`);
+  }
+}
+
+const romain = new Contact();
+romain.hello()

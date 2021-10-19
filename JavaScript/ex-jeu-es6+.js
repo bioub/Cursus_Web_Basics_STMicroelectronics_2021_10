@@ -21,8 +21,10 @@ const readline = require('readline');
 
 class Jeu {
   constructor(options = {}) {
+    // ES2015
     const { min = 0, max = 100 } = options;
 
+    // ES2020 (Node 14+)
     // const min = options.min ?? 0;
     // const max = options.max ?? 100;
 
