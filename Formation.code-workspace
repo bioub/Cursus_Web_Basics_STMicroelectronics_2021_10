@@ -8,9 +8,12 @@
 		},
 		{
 			"path": "JavaScript"
+		},
+		{
+			"path": "APIs-Web"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "JavaScript"
+		"liveServer.settings.multiRootWorkspaceName": "APIs-Web"
 	}
 }
