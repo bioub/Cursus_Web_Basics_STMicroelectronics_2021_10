@@ -1,7 +1,7 @@
-function createTodoRow() {
+export function createTodoRow() {
 
 }
 
-function deleteTodoRow() {
-  
+export function deleteTodoRow() {
+
 }
