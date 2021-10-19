@@ -2,16 +2,21 @@
 // Immediately Invoked Function Expression
 // (function () {
 //   const button = document.querySelector('button');
-
-import { createTodoRow } from "./todos.js";
-
-
 //   console.log(document.querySelector('button')); // null
 //   console.log(typeof createTodoRow); // function
 // }());
 
+import { createTodoRow } from "./todos.js";
 
-console.log(typeof createTodoRow); // function
-const button = document.querySelector('button');
+/** @type {HTMLFormElement} */
+const todoFormEl = document.querySelector('.todo-form');
 
-console.log(document.querySelector('button')); // null
+/** @type {HTMLInputElement} */
+const todoToggleAllEl = document.querySelector('.todo-toggle-all');
+
+/** @type {HTMLInputElement} */
+const todoInputEl = document.querySelector('.todo-input');
+
+/** @type {HTMLDivElement} */
+const todoListEl = document.querySelector('.todo-list');
+
