@@ -34,3 +34,11 @@ todoFormEl.addEventListener('submit', (/** @type {SubmitEvent} */ event) => {
 // Ecouter le click de la checkbox todoToggleAllEl
 // Et cocher toutes les checkbox présentes dans
 // todoListEl en fonction de la valeur de todoToggleAllEl
+todoToggleAllEl.addEventListener('click', () => {
+  /** @type {NodeListOf<HTMLInputElement>} */
+  const todoCompletedEls = todoListEl.querySelectorAll('.todo-completed');
+
+  for (const todoCompletedEl of todoCompletedEls) {
+    todoCompletedEl.checked = todoToggleAllEl.checked;
+  }
+});

@@ -21,16 +21,20 @@ export function createTodoRow(todo) {
   // Ajouter la checkbox comme dans le HTML ci-dessus
   // et la cocher selon la valeur de todo.completed
   // Doc : HTMLInputElement
-  const inputEl = document.createElement('input');
-  inputEl.type = 'checkbox';
-  inputEl.className = 'todo-completed';
-  inputEl.checked = todo.completed;
-  todoRowEl.append(inputEl);
+  const checkboxEl = document.createElement('input');
+  checkboxEl.type = 'checkbox';
+  checkboxEl.className = 'todo-completed';
+  checkboxEl.checked = todo.completed;
+  todoRowEl.append(checkboxEl);
 
   const spanEl = document.createElement('span');
   spanEl.className = 'todo-title';
   spanEl.innerText = todo.title;
   todoRowEl.append(spanEl);
+
+  const inputEl = document.createElement('input');
+  spanEl.className = 'todo-edit';
+  inputEl.value = todo.title;
 
   // Exercice 4
   // Ecouter l'événement dblclick de spanEl
@@ -38,6 +42,14 @@ export function createTodoRow(todo) {
   // todo.title doit s'afficher dans le champs
   // et click du champs revenir à la balise span rempli comme la saisie du champ
   // Comme dans l'exemple https://todomvc.com/examples/backbone/
+  spanEl.addEventListener('dblclick', () => {
+    spanEl.replaceWith(inputEl);
+  });
+
+  inputEl.addEventListener('dblclick', () => {
+    spanEl.innerText = inputEl.value;
+    inputEl.replaceWith(spanEl);
+  });
 
   // Exercice 2
   // Ajouter le bouton moins
