@@ -6,6 +6,7 @@
 //   console.log(typeof createTodoRow); // function
 // }());
 
+import { fetchTodos } from "./api.js";
 import { createTodoEdit, createTodoRow, createTodoTitle } from "./todos.js";
 
 /** @type {HTMLFormElement} */
@@ -85,3 +86,8 @@ document.addEventListener('click', (event) => {
     }
   }
 });
+
+
+fetchTodos().then((todos) => {
+  console.log(todos);
+})
