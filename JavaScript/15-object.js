@@ -36,7 +36,10 @@ const coords2 = {
 };
 
 const MyMath = {
-  sum: (a, b) => a + b,
+  // sum: (a, b) => a + b,
+  sum(a, b) {
+    return a + b;
+  }
 };
 
 console.log(typeof coords1); // object

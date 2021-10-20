@@ -17,6 +17,14 @@ console.log(hello.call(contact, 'Jean', 'Eric'));
 console.log(hello.apply(contact, ['Jean', 'Eric']));
 console.log(hello.call(contact, ...['Jean', 'Eric']));
 
+/*
+function bind(thisArg) {
+  return function() {
+    originalFct.call(thisArg)
+  }
+}
+*/
+
 const helloContact = hello.bind(contact);
 console.log(helloContact('Jean', 'Eric'));
 
@@ -25,6 +33,10 @@ console.log(helloContact('Jean', 'Eric'));
 function sum(a, b) {
   let result = a + b;
 
+  // Moderne
+  // for (const nb of Array.from(arguments)) {
+
+  // Historique
   for (const nb of Array.prototype.slice.call(arguments, 2)) {
     result += nb;
   }

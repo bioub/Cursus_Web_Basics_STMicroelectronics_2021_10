@@ -20,7 +20,7 @@ const todoInputEl = document.querySelector('.todo-input');
 /** @type {HTMLDivElement} */
 const todoListEl = document.querySelector('.todo-list');
 
-todoFormEl.addEventListener('submit', (event) => {
+todoFormEl.addEventListener('submit', (/** @type {SubmitEvent} */ event) => {
   event.preventDefault();
   const todoRowEl = createTodoRow({
     id: Math.random(),

@@ -83,7 +83,7 @@ const romain = new Contact();
 romain.helloAsync();
 
 // Pour résumer les bonnes pratiques
-// - activer le mode strict (éviter les surprise avec this, ou les variables global
+// - activer le mode strict ou les modules ECMAScript (éviter les surprise avec this, ou les variables global
 // quand on oublie let ou const)
 // - ne plus utiliser var (const en priorité et let sinon)
 // - pour les fonctions :

@@ -21,11 +21,16 @@ export function createTodoRow(todo) {
   // Ajouter la checkbox comme dans le HTML ci-dessus
   // et la cocher selon la valeur de todo.completed
   // Doc : HTMLInputElement
+  const inputEl = document.createElement('input');
+  inputEl.type = 'checkbox';
+  inputEl.className = 'todo-completed';
+  inputEl.checked = todo.completed;
+  todoRowEl.append(inputEl);
 
   const spanEl = document.createElement('span');
   spanEl.className = 'todo-title';
   spanEl.innerText = todo.title;
-  todoRowEl.appendChild(spanEl);
+  todoRowEl.append(spanEl);
 
   // Exercice 4
   // Ecouter l'événement dblclick de spanEl
@@ -39,6 +44,13 @@ export function createTodoRow(todo) {
   // Ecouter l'événement click du button
   // et supprimer la balise <div class="todo-row"> parent
   // le addEventListener sera dans ce fichier
+  const buttonDeleteEl = document.createElement('button');
+  buttonDeleteEl.className = 'todo-delete';
+  buttonDeleteEl.innerText = '-';
+  buttonDeleteEl.addEventListener('click', () => {
+    todoRowEl.remove();
+  });
+  todoRowEl.append(buttonDeleteEl);
 
   return todoRowEl;
 }
