@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .externe {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        background-color: lightblue;
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="externe"></div>
+    <script type="module">
+      /** @type {HTMLDivElement} */
+      const externeEl = document.querySelector('.externe');
+
+      externeEl.addEventListener('click', (event) => {
+        const r = Math.floor(Math.random() * 101);
+        const g = Math.floor(Math.random() * 101);
+        const b = Math.floor(Math.random() * 101);
+        externeEl.style.backgroundColor = `rgb(${r}%, ${g}%, ${b}%)`;
+      });
+    </script>
+  </body>
+</html>

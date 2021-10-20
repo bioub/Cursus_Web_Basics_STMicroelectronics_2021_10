@@ -17,6 +17,19 @@
   display: flex;
 }
 
+.todo-row .todo-edit {
+  display: none;
+}
+
+.todo-row.edit .todo-edit {
+  display: inline;
+}
+
+.todo-row.edit .todo-title {
+  display: none;
+}
+
 .todo-title, .todo-edit {
   flex: 1;
 }
+

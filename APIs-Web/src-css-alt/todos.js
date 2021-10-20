@@ -30,6 +30,9 @@ export function createTodoRow(todo) {
   const spanEl = createTodoTitle(todo.title)
   todoRowEl.append(spanEl);
 
+  const todoEditEl = createTodoEdit(todo.title)
+  todoRowEl.append(todoEditEl);
+
 
   // Exercice 4
   // Ecouter l'événement dblclick de spanEl

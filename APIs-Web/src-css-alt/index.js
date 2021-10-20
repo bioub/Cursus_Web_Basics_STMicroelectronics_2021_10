@@ -64,8 +64,8 @@ todoListEl.addEventListener('dblclick', (event) => {
   /** @type {HTMLElement} */
   const target = event.target;
   if (target.classList.contains('todo-title')) {
-    const inputEl = createTodoEdit(target.innerText);
-    target.replaceWith(inputEl);
+    const todoRowEl = target.closest('.todo-row');
+    todoRowEl.classList.add('edit');
   }
 });
 
@@ -78,10 +78,12 @@ document.addEventListener('click', (event) => {
   const target = event.target;
   if (!target.classList.contains('todo-edit')) {
     /** @type {HTMLInputElement} */
-    const todoEditEl = todoListEl.querySelector('.todo-edit');
-    if (todoEditEl) {
-      const spanEl = createTodoTitle(todoEditEl.value);
-      todoEditEl.replaceWith(spanEl);
+    const todoRowEditEl = todoListEl.querySelector('.todo-row.edit');
+    if (todoRowEditEl) {
+      const spanEl = todoRowEditEl.querySelector('.todo-title');
+      const inputEl = todoRowEditEl.querySelector('.todo-edit');
+      spanEl.innerText = inputEl.value;
+      todoRowEditEl.classList.remove('edit');
     }
   }
 });
