@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <input type="text" name="prenom">
+    <button>Go</button>
+    <button type="reset">Reset</button>
+  </form>
+  <script type="module">
+    /** @type {HTMLInputElement} */
+    const inputEl = document.querySelector('input');
+
+    const inputEventNames = ['keydown', 'keypress', 'keyup', 'beforeinput', 'input', 'focus', 'focusin', 'focusout', 'blur', 'select', 'change'];
+
+    for (const inputEventName of inputEventNames) {
+      inputEl.addEventListener(inputEventName, (event) => {
+        console.log(inputEventName, event);
+      });
+    }
+
+    /** @type {HTMLFormElement} */
+    const formEl = document.querySelector('form');
+
+    const formEventNames = ['submit', 'reset', 'formdata'];
+
+    formEl.addEventListener('submit', (event) => {
+      event.preventDefault();
+      console.log('submit', event);
+
+      // Envoyer les données via FormData
+      const data = new FormData(formEl);
+      console.log(Object.fromEntries(data.entries()));
+    });
+
+    formEl.addEventListener('reset', (event) => {
+      console.log('reset', event);
+    });
+
+    formEl.addEventListener('formdata', (event) => {
+      console.log('formdata', event);
+    });
+  </script>
+</body>
+</html>

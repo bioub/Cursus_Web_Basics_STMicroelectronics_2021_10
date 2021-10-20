@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .externe {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        background-color: lightblue;
+        display: flex;
+      }
+      .interne {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        background-color: lightsalmon;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="externe">
+      <div class="interne element"></div>
+    </div>
+    <script type="module">
+      /** @type {HTMLDivElement} */
+      const externeEl = document.querySelector('.externe');
+
+      externeEl.addEventListener('click', (event) => {
+        console.log(event.currentTarget); // toujours externeEl (là où on a utilisé addEventListener)
+        console.log(event.target); // la feuille de l'arbre sur laquelle on a cliqué
+
+        /** @type {HTMLElement} */
+        const target = event.target;
+        if (target.classList.contains('interne')) {
+          console.log('le clic se fait sur interne');
+        }
+      });
+    </script>
+  </body>
+</html>

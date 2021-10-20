@@ -32,9 +32,6 @@ export function createTodoRow(todo) {
   spanEl.innerText = todo.title;
   todoRowEl.append(spanEl);
 
-  const inputEl = document.createElement('input');
-  spanEl.className = 'todo-edit';
-  inputEl.value = todo.title;
 
   // Exercice 4
   // Ecouter l'événement dblclick de spanEl
@@ -43,12 +40,14 @@ export function createTodoRow(todo) {
   // et click du champs revenir à la balise span rempli comme la saisie du champ
   // Comme dans l'exemple https://todomvc.com/examples/backbone/
   spanEl.addEventListener('dblclick', () => {
+    const inputEl = document.createElement('input');
+    spanEl.className = 'todo-edit';
+    inputEl.value = spanEl.innerText;
     spanEl.replaceWith(inputEl);
-  });
-
-  inputEl.addEventListener('dblclick', () => {
-    spanEl.innerText = inputEl.value;
-    inputEl.replaceWith(spanEl);
+    inputEl.addEventListener('dblclick', () => {
+      spanEl.innerText = inputEl.value;
+      inputEl.replaceWith(spanEl);
+    });
   });
 
   // Exercice 2

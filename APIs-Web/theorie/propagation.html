@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .externe {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        background-color: lightblue;
+        display: flex;
+      }
+      .interne {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        background-color: lightsalmon;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="externe">
+      <div class="interne"></div>
+    </div>
+    <script type="module">
+      /** @type {HTMLDivElement} */
+      const externeEl = document.querySelector('.externe');
+
+      /** @type {HTMLDivElement} */
+      const interneEl = document.querySelector('.interne');
+
+      window.addEventListener('click', (event) => {
+        console.log('window click', event);
+      });
+
+      document.addEventListener('click', (event) => {
+        console.log('document click', event);
+      });
+
+      document.documentElement.addEventListener('click', (event) => {
+        console.log('html click', event);
+      });
+
+      document.body.addEventListener('click', (event) => {
+        console.log('body click', event);
+      });
+
+      externeEl.addEventListener('click', (event) => {
+        console.log('div externe click', event);
+      });
+
+      interneEl.addEventListener('click', (event) => {
+        console.log('div interne 1 click', event);
+      });
+
+      interneEl.addEventListener('click', (event) => {
+        console.log('div interne 2 click', event);
+      });
+
+      setInterval(() => {
+        const event = new PointerEvent('click');
+        interneEl.dispatchEvent(event);
+      }, 5000);
+    </script>
+  </body>
+</html>

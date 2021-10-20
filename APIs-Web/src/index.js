@@ -42,3 +42,18 @@ todoToggleAllEl.addEventListener('click', () => {
     todoCompletedEl.checked = todoToggleAllEl.checked;
   }
 });
+
+// Exercice 5
+// Retirer le addEventListener du bouton moins dans todos.js
+// Ecouter ici le clic au niveau de todoListEl
+// Et vérifier que la target soit le bouton delete
+// si c'est le cas supprimer la ligne (plus de closure
+// utiliser : parentNode/parentElement, closest)
+
+// Exercice 6
+// Idem pour pour le dblclick de la balise span
+
+// Exercice 7
+// Remplacer le dblclick de l'input pas le click de document
+// Mais si on click sur l'input en cours d'éditer ne pas repasser à la balise span
+// (stopPropagation ou target)
