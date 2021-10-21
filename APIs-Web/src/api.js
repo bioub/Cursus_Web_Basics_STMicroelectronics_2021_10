@@ -9,7 +9,7 @@
 
 export function fetchTodos() {
   return fetch('https://jsonplaceholder.typicode.com/todos', {
-    // éventuellement des options
+    credentials: 'include',
   }).then((res) => res.json());
 }
 
@@ -25,6 +25,22 @@ export function fetchTodos() {
 
 // Au submit du formulaire appeler cette fonction postTodo
 // et insérer dans le DOM le retour du serveur (l'id ne sera plus aléatoire mais généré par le serveur)
+/**
+ * @param {object} todo
+ * @param {number} todo.id
+ * @param {string} todo.title
+ * @param {boolean} todo.completed
+ */
+export function postTodo(todo) {
+  return fetch('https://jsonplaceholder.typicode.com/todos', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify(todo),
+  }).then((res) => res.json());
+}
+
 
 // Exercice 3 : Supprimer la todo
 
@@ -35,8 +51,10 @@ export function fetchTodos() {
 
 // Dans index.js, au clic du bouton moins récupérer l'id stockée dans l'attribut data-todo-id de la ligne et appeler
 // deleteTodo, supprimer la ligne lorsque la requete se termine
+export function deleteTodo(id) {
+  return fetch('https://jsonplaceholder.typicode.com/todos/' + id, {
+    method: 'DELETE',
+  }).then((res) => res.json());
+}
 
-// Exercice 4 : Stocker la saisie dans le localStorage
-// Dans index.js, écouter l'événement input du champ todoInputEl
-// Récupérer la saisie et la stocker à la clé newTodo du localStorage
-// Au chargement de la page afficher la valeur précédement stockée s'il y en a une
+

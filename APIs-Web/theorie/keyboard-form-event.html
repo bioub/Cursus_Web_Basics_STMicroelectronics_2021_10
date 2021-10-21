@@ -27,8 +27,6 @@
     /** @type {HTMLFormElement} */
     const formEl = document.querySelector('form');
 
-    const formEventNames = ['submit', 'reset', 'formdata'];
-
     formEl.addEventListener('submit', (event) => {
       event.preventDefault();
       console.log('submit', event);

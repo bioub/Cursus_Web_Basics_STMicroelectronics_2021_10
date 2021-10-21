@@ -6,7 +6,7 @@
 //   console.log(typeof createTodoRow); // function
 // }());
 
-import { fetchTodos } from "./api.js";
+import { deleteTodo, fetchTodos, postTodo } from "./api.js";
 import { createTodoEdit, createTodoRow, createTodoTitle } from "./todos.js";
 
 /** @type {HTMLFormElement} */
@@ -23,12 +23,16 @@ const todoListEl = document.querySelector('.todo-list');
 
 todoFormEl.addEventListener('submit', (/** @type {SubmitEvent} */ event) => {
   event.preventDefault();
-  const todoRowEl = createTodoRow({
-    id: Math.random(),
+
+  const todo = {
     title: todoInputEl.value,
     completed: false,
+  };
+
+  postTodo(todo).then((todoFromServer) => {
+    const todoRowEl = createTodoRow(todoFromServer);
+    todoListEl.prepend(todoRowEl); // prepend PAS IE 11
   });
-  todoListEl.prepend(todoRowEl); // prepend PAS IE 11
 });
 
 // Exercice 3
@@ -55,7 +59,9 @@ todoListEl.addEventListener('click', (event) => {
   const target = event.target;
   if (target.classList.contains('todo-delete')) {
     const todoRowEl = target.closest('.todo-row');
-    todoRowEl.remove();
+    deleteTodo(todoRowEl.dataset.todoId).then(() => {
+      todoRowEl.remove();
+    });
   }
 });
 
@@ -87,7 +93,21 @@ document.addEventListener('click', (event) => {
   }
 });
 
-
 fetchTodos().then((todos) => {
-  console.log(todos);
-})
+  for (const todo of todos) {
+    const todoRowEl = createTodoRow(todo);
+    todoListEl.prepend(todoRowEl);
+  }
+});
+
+// Exercice 4 : Stocker la saisie dans le localStorage
+// Dans index.js, écouter l'événement input du champ todoInputEl
+// Récupérer la saisie et la stocker à la clé newTodo du localStorage
+// Au chargement de la page afficher la valeur précédement stockée s'il y en a une
+todoInputEl.addEventListener('input', (event) => {
+  localStorage.setItem('newTodo', event.target.value);
+});
+
+if (localStorage.getItem('newTodo')) {
+  todoInputEl.value = localStorage.getItem('newTodo');
+}
