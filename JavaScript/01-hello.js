@@ -18,7 +18,7 @@ names.push('Jacques');
  * @param {string} name
  */
 function hello(name) {
-  return `Hello ${name} !`; // template literal
+  return `Hello ${name.toUpperCase()} !`; // template literal
 }
 
 for (const n of names) {

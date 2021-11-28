@@ -65,8 +65,9 @@
 // Dans une fonction fléchée les pseudo-variables (this, arguments, super, new.target)
 // ne sont pas créées (au moment de l'appel)
 class Contact {
+  _name = 'Romain';
   constructor() {
-    this._name = 'Romain';
+    // this._name = 'Romain';
   }
   hello() {
     console.log(`My name is ${this._name}`);

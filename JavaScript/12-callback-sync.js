@@ -43,3 +43,15 @@ console.log('E');
 // |filter            - map          - forEach      - lg
 // 0-------------------------------------------------------> temps
 //                                     JEAN PAUL ERIC E
+
+
+
+const nbs = [3, 4, 5];
+
+// acc = 0, nb = 3, return a + b, 3
+// acc = 3, nb = 4, return a + b, 7
+// acc = 7, nb = 5, return a + b, 12
+
+const sum = nbs.reduce((acc, nb) => acc + nb, 0);
+console.log(sum); // 12
+

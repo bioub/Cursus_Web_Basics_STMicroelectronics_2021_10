@@ -4,8 +4,8 @@ const porteeScript = 'script';
 function externe() {
   const porteeClosure = 'closure';
   function interne() {
-    const porteLocal = 'local';
-    console.log(porteLocal);
+    const porteeLocal = 'local';
+    console.log(porteeLocal);
     console.log(porteeClosure);
     console.log(porteeScript);
     console.log(porteGlobal);
